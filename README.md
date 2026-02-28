@@ -1,0 +1,2 @@
+# MagnessMethod
+Training Helper
