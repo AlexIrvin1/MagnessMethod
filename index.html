@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magness-Style Training Planner</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>The <span class="highlight">Magness</span> Method</h1>
+                <p class="subtitle">Aerobic foundation. Measured intensity. Zero junk miles.</p>
+            </div>
+
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label for="mpw-slider">Weekly Mileage: <span id="mpw-value" class="value-display">70</span>
+                        miles</label>
+                    <input type="range" id="mpw-slider" min="20" max="140" value="70" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="maxlr-slider">Long Run Cap: <span id="maxlr-value" class="value-display">18</span>
+                        miles</label>
+                    <input type="range" id="maxlr-slider" min="10" max="22" value="18" step="1">
+                </div>
+                <div class="control-group">
+                    <label for="maxlw-slider">Midweek Long Cap: <span id="maxlw-value" class="value-display">14</span>
+                        miles</label>
+                    <input type="range" id="maxlw-slider" min="8" max="18" value="14" step="1">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats-summary">
+                <div class="stat-card">
+                    <h3>Aerobic Volume</h3>
+                    <p id="aerobic-stat">--</p>
+                    <span class="stat-label">~80% Target</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Quality Volume</h3>
+                    <p id="quality-stat">--</p>
+                    <span class="stat-label">~20% Target</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Runs</h3>
+                    <p id="frequency-stat">--</p>
+                    <span class="stat-label">Including Doubles</span>
+                </div>
+            </div>
+
+            <div class="schedule-grid" id="schedule-container">
+                <!-- Dynamically populated by JS -->
+            </div>
+
+            <div class="philosophy-notes">
+                <h3>Coach's Notes</h3>
+                <ul id="dynamic-notes">
+                    <!-- Dynamically populated based on mileage -->
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
