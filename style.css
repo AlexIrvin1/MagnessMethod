@@ -134,6 +134,46 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 2px;
 }
 
+/* Base Inputs & Buttons */
+.text-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--accent-electric);
+}
+
+.export-btn {
+    background: linear-gradient(135deg, var(--accent-electric), #2d74c4);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4);
+}
+
+.export-btn:active {
+    transform: translateY(0);
+}
+
 /* Stats Summary */
 .stats-summary {
     display: grid;
@@ -378,6 +418,58 @@ input[type=range]::-webkit-slider-runnable-track {
     left: 0;
     color: var(--accent-electric);
     font-weight: bold;
+}
+
+/* Mileage Builder Table */
+.builder-table-wrapper {
+    overflow-x: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1rem;
+}
+
+.builder-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.builder-table th,
+.builder-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.builder-table th {
+    font-family: var(--font-heading);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.builder-table td {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.builder-table td.status-build {
+    color: var(--accent-electric);
+}
+
+.builder-table td.status-down {
+    color: var(--accent-moderate);
+}
+
+.builder-table td.status-taper {
+    color: var(--accent-easy);
+}
+
+.builder-table td.status-peak {
+    color: var(--accent-quality);
+    font-weight: 800;
 }
 
 @media (max-width: 768px) {

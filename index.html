@@ -26,46 +26,96 @@
                     <input type="range" id="mpw-slider" min="20" max="140" value="70" step="1">
                 </div>
                 <div class="control-group">
-                    <label for="maxlr-slider">Long Run Cap: <span id="maxlr-value" class="value-display">18</span>
-                        miles</label>
-                    <input type="range" id="maxlr-slider" min="10" max="22" value="18" step="1">
+                    <label for="event-select">Goal Event</label>
+                    <select id="event-select" class="text-input"
+                        style="cursor: pointer; appearance: auto; color: white;">
+                        <option value="800m" style="color: black;">800m</option>
+                        <option value="1500m" style="color: black;">1500m / Mile</option>
+                        <option value="3000m" style="color: black;">3000m</option>
+                        <option value="5000m" style="color: black;" selected>5000m</option>
+                        <option value="10000m" style="color: black;">10,000m</option>
+                        <option value="half" style="color: black;">Half Marathon</option>
+                        <option value="full" style="color: black;">Marathon</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Auto-Generated Weekly Mileage Builder Controls -->
+            <div class="controls-panel"
+                style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <div class="control-group">
+                    <label for="phase-select">Training Phase</label>
+                    <select id="phase-select" class="text-input"
+                        style="cursor: pointer; appearance: auto; color: white;">
+                        <option value="base" style="color: black;" selected>Base Phase</option>
+                        <option value="strength" style="color: black;">Strength Phase</option>
+                        <option value="specific" style="color: black;">Specific Phase</option>
+                        <option value="peak" style="color: black;">Peak Phase</option>
+                        <option value="taper" style="color: black;">Taper / Race Week</option>
+                    </select>
                 </div>
                 <div class="control-group">
-                    <label for="maxlw-slider">Midweek Long Cap: <span id="maxlw-value" class="value-display">14</span>
-                        miles</label>
-                    <input type="range" id="maxlw-slider" min="8" max="18" value="14" step="1">
+                    <label for="target-mpw-input">Goal Mileage <span
+                            style="font-size: 0.8rem; color: var(--text-secondary);">(MPW)</span></label>
+                    <input type="number" id="target-mpw-input" placeholder="e.g. 100" class="text-input" value="100">
+                </div>
+                <div class="control-group">
+                    <label for="weeks-until-race-input">Weeks to Race</label>
+                    <input type="number" id="weeks-until-race-input" placeholder="e.g. 16" class="text-input"
+                        value="16">
+                </div>
+                <div class="control-group">
+                    <label for="max-increase-slider">Max Weekly Increase: <span id="max-increase-value"
+                            class="value-display">10</span>%</label>
+                    <input type="range" id="max-increase-slider" min="5" max="25" value="10" step="1">
+                </div>
+                <div class="control-group" style="margin-top: 1rem;">
+                    <label for="double-threshold-checkbox"
+                        style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="double-threshold-checkbox" checked
+                            style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--accent-electric);">
+                        Enable Double Threshold (85+ mpw)
+                    </label>
+                </div>
+                <div class="control-group" style="justify-content: center; width: 100%;">
+                    <button id="btn-generate-build" class="export-btn" style="margin-top: 1.5rem; width: 100%;">Generate
+                        Plan</button>
                 </div>
             </div>
         </header>
 
         <main>
-            <div class="stats-summary">
-                <div class="stat-card">
-                    <h3>Aerobic Volume</h3>
-                    <p id="aerobic-stat">--</p>
-                    <span class="stat-label">~80% Target</span>
-                </div>
-                <div class="stat-card">
-                    <h3>Quality Volume</h3>
-                    <p id="quality-stat">--</p>
-                    <span class="stat-label">~20% Target</span>
-                </div>
-                <div class="stat-card">
-                    <h3>Total Runs</h3>
-                    <p id="frequency-stat">--</p>
-                    <span class="stat-label">Including Doubles</span>
-                </div>
-            </div>
+            <!-- Old Schedule Preview Removed -->
 
-            <div class="schedule-grid" id="schedule-container">
-                <!-- Dynamically populated by JS -->
-            </div>
+            <!-- Coach's Notes Removed -->
 
-            <div class="philosophy-notes">
-                <h3>Coach's Notes</h3>
-                <ul id="dynamic-notes">
-                    <!-- Dynamically populated based on mileage -->
-                </ul>
+            <div class="mileage-builder-section" style="margin-top: 3rem; display: none;"
+                id="mileage-builder-container">
+                <div class="day-header" style="margin-bottom: 2rem;">
+                    <div class="day-name">Mileage Buildup & Taper Plan</div>
+                    <div class="run-type">Macrocycle</div>
+                </div>
+
+                <div class="builder-table-wrapper">
+                    <table class="builder-table" id="macro-table">
+                        <thead>
+                            <tr>
+                                <th>Week</th>
+                                <th>Vol</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                <th>Sun</th>
+                            </tr>
+                        </thead>
+                        <tbody id="macro-table-body">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
     </div>
